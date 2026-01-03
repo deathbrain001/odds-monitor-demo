@@ -7,7 +7,11 @@ load_dotenv()
 API_KEY = os.getenv("ODDS_API_KEY", "")
 API_URL = "https://api.the-odds-api.com/v4/sports/soccer_epl/odds"
 
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    template_folder="templates",
+    static_folder="static"
+)
 previous = {}
 
 HTML = '''
